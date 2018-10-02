@@ -1,6 +1,6 @@
 package no.universitetsforlaget.juridika.libraries.jats.dtd.entityresolver;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.CoreMatchers.endsWith;
 

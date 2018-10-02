@@ -9,13 +9,15 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 public class JatsEntityResolver implements EntityResolver {
+  private static final String DTD_ENTRYPOINT = "JATS-journalpublishing1.dtd";
+
   private static final String JATS_V1_1D1_PATH = "/dtd/niso-jats/1.1d1/";
   private static final String JATS_V1_1_PATH = "/dtd/niso-jats/1.1/";
 
   private static final String JATS_V1_1D1_DTD_SYSTEM_ID =
-      "http://jats.nlm.nih.gov/publishing/1.1d1/JATS-journalpublishing1.dtd";
+      "http://jats.nlm.nih.gov/publishing/1.1d1/" + DTD_ENTRYPOINT;
   private static final String JATS_V1_1_DTD_SYSTEM_ID =
-      "http://jats.nlm.nih.gov/publishing/1.1/JATS-journalpublishing1.dtd";
+      "http://jats.nlm.nih.gov/publishing/1.1/" + DTD_ENTRYPOINT;
 
   public JatsEntityResolver() {
   }
@@ -23,10 +25,10 @@ public class JatsEntityResolver implements EntityResolver {
   public InputSource resolveEntity(String publicId, String systemId)
       throws SAXException, IOException {
     if (JATS_V1_1D1_DTD_SYSTEM_ID.equals(systemId)) {
-      final URL url = getClass().getResource(JATS_V1_1D1_PATH + "JATS-journalpublishing1.dtd");
+      final URL url = getClass().getResource(JATS_V1_1D1_PATH + DTD_ENTRYPOINT);
       return loadResource(url);
     } else if (JATS_V1_1_DTD_SYSTEM_ID.equals(systemId)) {
-      final URL url = getClass().getResource(JATS_V1_1_PATH + "JATS-journalpublishing1.dtd");
+      final URL url = getClass().getResource(JATS_V1_1_PATH + DTD_ENTRYPOINT);
       return loadResource(url);
     } else if (systemId.startsWith("file:/")) {
       return loadResource(new URL(systemId));
