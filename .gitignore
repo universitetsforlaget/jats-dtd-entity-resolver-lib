@@ -1,0 +1,10 @@
+target/
+build/
+out/
+
+### IntelliJ IDEA ###
+.idea
+*.iml
+
+.gradle
+.DS_Store
