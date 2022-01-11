@@ -22,7 +22,7 @@ plugins {
 apply plugin: 'juridika-java-library'
 
 group = 'no.universitetsforlaget.juridika.libraries'
-version = '1.0.3-SNAPSHOT'
+version = '1.0.3'
 description = "jats-dtd-entity-resolver"
 
 dependencies {
