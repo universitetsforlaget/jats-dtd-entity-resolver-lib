@@ -1,1 +1,1 @@
-juridikaJavaLibPipeline()
+juridikaJvmLibraryPipeline()
